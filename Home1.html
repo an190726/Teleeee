@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An261229 - Profile</title>
+    <style>
+        /* Biến màu sắc giúp dễ tùy chỉnh */
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #ffffff;
+            --text-sub: #8b949e;
+            --accent-color: #58a6ff;
+            --glow-color: rgba(88, 166, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Hiệu ứng mờ ảo phía sau */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--accent-color);
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .profile-card {
+            background-color: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            max-width: 320px;
+            width: 85%;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            padding: 5px;
+            border: 2px solid var(--accent-color);
+            margin-bottom: 1.2rem;
+            object-fit: cover;
+            box-shadow: 0 0 15px var(--glow-color);
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .username {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #238636, #2ea043);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
+        }
+
+        .btn img {
+            width: 22px;
+            margin-right: 12px;
+        }
+
+        /* Hiệu ứng loading đơn giản khi load trang */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-card {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <img src="https://ui-avatars.com/api/?name=An&background=007AFF&color=fff&size=256" alt="An Avatar" class="avatar">
+        
+        <h1>An261229</h1>
+        <span class="username">@Developer</span>
+        
+        <p>Ghé thăm profile của mình và kết nối qua Telegram nhé!</p>
+
+        <a href="https://t.me/An261229" target="_blank" class="btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon">
+            Nhắn tin cho mình
+        </a>
+    </div>
+
+</body>
+</html>
